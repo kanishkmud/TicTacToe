@@ -1,0 +1,102 @@
+%line-prop {
+  background-color: #4B0082;
+  position: absolute;
+  border-radius: 10px;
+}
+%vertical {
+  height: 300px;
+  width: 15px;
+}
+%horizontal {
+  height: 15px;
+  width: 300px;
+}
+
+body {
+  background-image: #5f2c82;
+  background-image: -webkit-linear-gradient(to left, #5f2c82, #49a09d);
+  background-image: linear-gradient(to left, #5f2c82, #49a09d);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  font-family: arial;
+  color: #2a0d45;
+  #container {
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    position: relative;
+    #start {
+      border-radius: 5px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        cursor: pointer;
+        color: lightgrey;
+        font-size: 24px;
+      }
+    }
+    #grid {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 15px;
+      .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        font-weight: 600;
+        color: lightgrey;
+        height: 90px;
+        width: 90px;
+      }
+    }
+    #line-vertical-left {
+      @extend %vertical;
+      @extend %line-prop;
+      margin-left: 90px;
+    }
+    #line-vertical-right {
+      @extend %vertical;
+      @extend %line-prop;
+      margin-left: 195px;
+    }
+    #line-horizontal-top {
+      @extend %horizontal;
+      @extend %line-prop;
+      margin-top: 90px;
+    }
+    #line-horizontal-bottom {
+      @extend %horizontal;
+      @extend %line-prop;
+      margin-top: 195px;
+    }
+  }
+  #logo {
+    height: 35px;
+    i {
+      font-size: 36px;
+      cursor: pointer;
+      &:hover {
+        color: #4B0082;
+      }
+      &:active {
+        font-size: 30px;
+      }
+    }
+  }
+}
+#X,#O {
+  font-size: 48px;
+  color: lightgrey;
+  cursor: pointer;
+  margin: 10px;
+}
